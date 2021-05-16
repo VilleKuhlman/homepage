@@ -1,0 +1,178 @@
+:host{
+    font-size: 1.3vmin;
+    overflow: hidden;
+    z-index: 10000000;
+    max-width: 1100px;
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    position:fixed;
+    cursor: pointer;
+    background: radial-gradient(circle, rgba(0, 119, 255, .1) 18%, #ffffff 63%);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+        background: rgba(0, 119, 255, .1);
+    }}
+}
+
+div:focus {
+    outline: 0;
+}
+
+.portfolio:hover, .cv:hover{
+    color: #499dff;
+    background-color: rgba(0, 119, 255, 0.1);
+    fa-icon{
+        color: #499dff;
+    }
+}
+
+.contact:hover{
+    color: #499dff;
+    fa-icon{
+        color: #499dff;
+    }
+}
+
+.contact:hover:before{
+    background-color: rgba(0, 119, 255, 0.1);
+}
+
+fa-icon{
+    font-size: 4vh;
+    position: fixed;
+    line-height: 0;
+}
+
+span{
+    display: flex;
+    justify-content: center;
+    line-height: 4vh;
+    font-size: 2vh;
+}
+
+div span{
+    @-moz-document url-prefix() {
+        line-height:6;
+    }
+}
+
+.portfolio{
+    transform: skew(35deg);
+    width: 50%; height: 100%; 
+    position: absolute; 
+    left: 50%;
+    overflow: hidden; 
+    transform-origin: 100% 0%; 
+    max-width: 650px;
+    z-index: -100;
+    border-left: 2px solid #ffffff;
+    span{
+        font-family: Megrim; 
+        position:fixed; 
+        left: 33%; 
+        transform: skew(-35deg); 
+        transform-origin: 0% 0%; 
+        top: 20vmin;
+    }
+}
+
+.cv{ 
+    transform: skew(-35deg);
+    width: 50%; 
+    height: 100%; 
+    position: absolute; 
+    right: 50%; 
+    overflow: hidden; 
+    transform-origin: 100% 0%;
+    max-width: 650px; z-index: -100;
+    border-right: 2px solid #ffffff;
+    span{
+        font-family: Megrim; 
+        position:fixed; 
+        right: 33%; 
+        transform-origin: 0% 0%; 
+        transform: skew(35deg); 
+        top: 20vmin;
+    }
+}
+
+.contact {
+    width: 100%;
+    height: 160%;
+    padding-bottom: 21.27%;
+    position: relative;
+    overflow: hidden;
+    z-index: -10000;
+    span{
+        font-family: Megrim; 
+        left: 50%;
+        position:absolute;
+        top: 28vmin;
+        transform-origin: 0% 0%;
+        transform: translate(-50%, 100%);
+    }
+}
+
+.contact:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 0%;
+    transform: rotate(55deg) skewX(20deg);  
+}
+
+
+.isActive{
+    color: #499dff;
+    background-color: rgba(0, 119, 255, 0.1);
+    fa-icon{
+        color: #499dff;
+    }
+}
+
+.isActiveContact{
+    color: #499dff;
+    fa-icon{
+        color: #499dff;
+    }
+}
+
+.isActiveContact:before{
+    background-color: rgba(0, 119, 255, 0.1);
+}
+
+div fa-icon{
+    transition-delay: 0.01s;
+    color:rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+.upperFA{
+    font-size: 25vh;
+    line-height: 0.75em;
+    vertical-align: -0.0667em;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    color: #7bb9ff29;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-height: 950px) {
+    span{
+        line-height: 3vh;
+        font-size: 1.5vh; 
+    }
+
+    fa-icon{
+        font-size: 3vh;
+    }
+}

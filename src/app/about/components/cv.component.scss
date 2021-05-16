@@ -1,0 +1,165 @@
+:host{
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Titillium Web;
+    margin-top: 6vh;
+}
+
+.banner{
+    background: linear-gradient(90deg, rgba(42,40,45,1) 0%, rgba(255,255,255,0) 100%);
+    height: 30%; 
+    margin: 0; 
+    align-items: center;
+    padding: 2px; 
+    display: flex; 
+    width: 100%;
+}
+
+h3{
+    color: white;
+    margin: 0; 
+    font-size: 32px;
+    margin-left: 5%;
+}
+
+h4{
+    color: black;
+    margin: 0; 
+    font-size: 32px;
+    position: absolute;
+    top: 2%;
+    left: 20%;
+}
+
+h5{
+    margin-bottom: 0.3rem;
+}
+
+img{
+    height: 70%; 
+    max-height: 160px;
+    margin-left: 5%;
+}
+
+div{
+    font-size: 12px;
+    overflow:hidden;
+    transition: height 0.4s; 
+}
+
+.content{
+    word-break: break-word;
+    white-space: pre-wrap;
+    padding-right: 6px;
+    padding-left: 4px;
+    height: 100%;
+}
+
+.toggleactive{
+    height: 54% !important;
+    box-shadow: 0 9px 0px 0px #fbfcff, 0 -9px 0px 0px #fbfcff, 0px 0 7px 0px #4FA1FF, 0px 0 7px 0px #4fa1ff;
+    background: #f1f7ff;
+}
+
+.container-fluid{
+    padding-right: 7px;
+    padding-left: 7px;
+    height: 71%; 
+    position: relative;
+}
+
+.toggleinactive{
+    height: 20% !important;
+    cursor: pointer;
+    .content{
+        height: 135px;     
+        transition: height 0.6s;
+    }
+}
+
+.row{
+    margin: 0 !important;
+}
+
+.row:first-of-type{
+    height: 22%; 
+    overflow:hidden;
+    margin-bottom: 5px !important; 
+    align-content: flex-end;
+}
+
+.line{
+    height: 95%;
+    position: absolute;
+    left: 41%;
+    width: 3px;
+    background: #499dff3b;
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        height: 15vh;
+        width: 5px;
+        transform: translateY(-100%);
+        left: 0;
+        background: linear-gradient(to bottom, #499dff00 0%, #499dff 75%, #499dff 100%);
+        animation: run 7s 0s infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+        animation-delay: 2s;
+    }
+
+    @keyframes run{
+        0%{
+            transform: translateY(-100%);
+        }      
+        100%{
+            transform: translateY(380%);
+        }   
+    }
+}
+
+@media screen and (max-width: 880px) {
+    h3{
+        font-size: 28px;
+    }
+
+    h4{
+        font-size: 26px;
+        left: 28%;
+    }
+
+    h5{
+        font-size: 1.2rem;
+    }
+
+    .content{
+        font-size: 11px;
+    }
+
+    .toggleinactive{
+        .content{
+            height: 79px;
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    h3{
+        font-size: 25px;
+    }
+
+    h4{
+        font-size: 22px;
+        left: 35%;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .container-fluid{
+        height: 75%;
+    }
+}

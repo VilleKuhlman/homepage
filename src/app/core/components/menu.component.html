@@ -1,0 +1,12 @@
+<fa-icon [icon]="['fas', 'file-code']" class="upperFA fa-lg" *ngIf="currentPathId===4" (click)="setMenu(true)"></fa-icon>
+<fa-icon [icon]="['fas', 'file-alt']" class="upperFA fa-lg" *ngIf="currentPathId===3" (click)="setMenu(true)"></fa-icon>
+<fa-icon [icon]="['fas', 'envelope']" class="upperFA fa-lg" *ngIf="currentPathId===5" (click)="setMenu(true)"></fa-icon>
+<div class="portfolio" [routerLink]="['/contact']" (click)="setMenu(currentPathId===5)" [ngClass]="{isActive:currentPathId===5&&!hovering, inActive:currentPathId!==5}" (mouseover)="setActiveButton(5)" (mouseout)="setActiveButton(0)">
+    <span><fa-icon [icon]="['fas', 'envelope']" ></fa-icon><br>CONTACT</span>
+</div>
+<div [routerLink]="['/about/cv']" class="cv" (click)="setMenu(currentPathId===3)" [ngClass]="{isActive:currentPathId===3&&!hovering, inActive:currentPathId!==3}" (mouseover)="setActiveButton(3)" (mouseout)="setActiveButton(0)">
+    <span><fa-icon [icon]="['fas', 'file-alt']" ></fa-icon><br>ABOUT</span>
+</div>
+<div [routerLink]="['/portfolio']" class="contact" (click)="setMenu(currentPathId===4)" [ngClass]="{isActiveContact:currentPathId===4&&!hovering, inActive:currentPathId!==4}" (mouseover)="setActiveButton(4)" (mouseout)="setActiveButton(0)">
+    <span><fa-icon [icon]="['fas', 'file-code']"></fa-icon><br>PORTFOLIO</span>
+</div>

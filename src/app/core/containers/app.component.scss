@@ -1,0 +1,34 @@
+:host div.showMenu ::ng-deep vk-pulse {
+    animation: none;
+} 
+
+:host{
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1100px;
+    position: fixed;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    overflow: hidden; 
+    div {
+        transition: 0.6s;
+    }
+}
+
+.routeUP{
+    transform: translateY(-25%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.pulseUP{
+    transform: translateY(-25%);
+    transition:0.7s;
+}
+
+vk-pulse{
+    transition:0.8s;
+}
+

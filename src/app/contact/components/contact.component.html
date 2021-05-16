@@ -1,0 +1,22 @@
+<form *ngFor="let question of (questions | selectedQuestion:selectedQuestionID); index as y; trackBy: trackByQuestionId">
+  <h2 (click)="focusOnFirstName(question?.type)">{{question?.sentence}}</h2>
+  <p *ngIf="question?.placeholder" (click)="focusOnFirstName(question?.type)">{{question.placeholder}}</p>
+  <textarea *ngIf="question?.type !== 'choice'" [attr.inputmode]="question?.type === 'number' ? 'numeric' : 'text'" [OnlyNumber]="question?.type === 'number' ? true : false" 
+    #firstNameField (keyup)="setAnswer($event.target.value)" [value]="answer?.value" [rows]="getRows()"></textarea>
+  <ng-container *ngIf="question?.type === 'choice'">      
+    <label class="choicebox" *ngFor="let choice of choices; index as i; trackBy: trackByChoiceId"
+    [for]="choice.id" [ngClass]="{checked:answer?.value===choice.id, blinker:blinker===true&&answer?.value===choice.id}" (tap)="setAnswer(choice.id, 'choice'); navigateNext()">
+      <input type="radio" [attr.id]="choice.id" [attr.name]="choice.id" [attr.value]="choice.id" [checked]="answer?.value===choice.id">
+      <span class="checkmark">{{alphabet.charAt(i)}}</span>
+      <fa-icon [icon]="faCheck" *ngIf="answer?.value===choice.id"></fa-icon>
+        {{choice.sentence}}
+    </label>
+  </ng-container>       
+  <button class="btn btn-lg" [ngClass]="{blinker:blinker===true}" type="button" (click)="navigateNext()"
+    *ngIf="showSubmit===false && !!answer?.value && question?.type !== 'choice'">OK <fa-icon [icon]="faCheck"></fa-icon>
+  </button>
+  <button class="btn btn-lg" type="button"
+    *ngIf="showSubmit===true" (click)="submitAnswer()" [disabled]="!!submitted">Submit <fa-icon [icon]="faEnvelope"></fa-icon>
+  </button>
+  <h4 [@submitText]="submitted" *ngIf="showSubmit===true">Thank you for your message.</h4>
+</form>

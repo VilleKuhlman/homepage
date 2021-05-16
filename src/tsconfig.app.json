@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "@vk-homepage/*": ["./app/*"]
+    }
+  },
+  "angularCompilerOptions": {
+  },
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ]
+}

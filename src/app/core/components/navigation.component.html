@@ -1,0 +1,14 @@
+<ul>          
+    <li class="navtoggle" [ngClass]="" (click)="toggleMenu.emit(showMenu)">
+        <a [routerLink]=""><fa-icon [icon]="['fas', 'bars']"></fa-icon></a>
+    </li>  
+    <li class="navarrow" [ngClass]="{glowing:showNextNav, inactive:!showNextNav}" (click)="navigate.emit('next')">
+        <a [routerLink]=""><fa-icon [icon]="['fas', 'chevron-down']"></fa-icon></a>
+    </li>
+    <li class="navarrow" [ngClass]="{inactive:!showPrevNav}" (click)="navigate.emit('prev')">
+        <a [routerLink]=""><fa-icon [icon]="['fas', 'chevron-up']"></fa-icon></a>
+    </li>  
+</ul>
+<li class="closebutton" [ngClass]="" (click)="toggleMenu.emit(showMenu)">
+    <a [routerLink]=""><fa-icon [icon]="['fas', 'bars']"></fa-icon></a>
+</li>

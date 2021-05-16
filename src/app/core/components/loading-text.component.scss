@@ -1,0 +1,37 @@
+:host{
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+}
+  
+@keyframes shining {
+  0% {opacity:0.1; transform:scale(1.3, 0.1); background-position: 150% 50%; }
+  5% {opacity:0.2; transform:scale(1.25, 0.1)}
+  15% {opacity:0.8; transform:scale(1, 1);}
+  30% {background-position: -30% 50%;}
+  53% {opacity:0.8; background-position: 150% 50%; transform:scale(1, 1);}
+  58% {opacity:0; transform:scale(1.4, 0);}
+  100% {background-position: 150% 50%;}
+}
+
+h1 {     
+  animation: shining 6.6s;
+  animation-delay: 0.2s;
+  animation-timing-function: linear;
+  opacity:0;
+  font-family: Anurati;
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: black;
+  text-shadow: 0 0 5px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(to right, black 40%, #f1f7ff 50%,black 60%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

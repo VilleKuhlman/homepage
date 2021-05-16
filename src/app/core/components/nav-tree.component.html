@@ -1,0 +1,11 @@
+<div class="VK" [routerLink]="['/']" [ngClass]="{vkUP:showMenu===true&&currentPathId===1, vkTOPLEFT:currentPathId>1}">VK</div>
+<ng-container *ngIf="!showLoadingScreen">
+  <ng-container *ngFor="let path of fullPath; let i = index;">
+    <span *ngIf="i === 0 && showMenu===false && currentPathId>1" class="root">/</span>
+    <span *ngIf="i === 0 && currentPathId!==1" [ngClass]="{pathUP:showMenu===true, pathDown:showMenu===false}" class="path" (click)="setMenu(true)">{{ path }}</span> 
+    <span *ngIf="i > 0 && showMenu===false" class="subpath">
+    / {{ path }}
+    </span>
+  </ng-container>
+  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ville-kuhlman-923341102/"><img src="/assets/images/LI-In-Bug.png"/></a>
+</ng-container>

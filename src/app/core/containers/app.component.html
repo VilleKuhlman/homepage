@@ -1,0 +1,9 @@
+<vk-spinner *ngIf="showLoadingScreen$ | async"></vk-spinner> 
+<vk-loading-text *ngIf="showLoadingScreen$ | async"></vk-loading-text>
+<vk-menu *ngIf="!!(showMenu$ | async)" [currentPathId]="currentPathId$ | async" ></vk-menu>
+<vk-navigation *ngIf="!(showLoadingScreen$ | async)" [navigation]="navigation$ | async" (toggleMenu)="setMenu($event)" (navigate)="navigatePath($event)"></vk-navigation>
+<vk-nav-tree *ngIf="loaded$ | async" [navTree]="(navTree$ | async)"></vk-nav-tree>
+<vk-pulse [ngClass]="{pulseUP:!!(showMenu$ | async)}" *ngIf="!(showLoadingScreen$ | async) && ((currentPathId$ | async) === 1 || !!(showMenu$ | async))"></vk-pulse>
+<div [ngClass]="{routeUP:!!(showMenu$ | async)}" (click)="setMenu(true)" *ngIf="!(showLoadingScreen$ | async)" [@dataAnimations]="!(showMenu$ | async) ? (currentDataId$ | async) : null" [@routeAnimations]="!(showMenu$ | async) ? (currentPathId$ | async) : null" style="width:100%;height:100%; position: absolute; z-index: 10000;">
+ <router-outlet></router-outlet>
+</div>

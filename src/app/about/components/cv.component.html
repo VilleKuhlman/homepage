@@ -1,0 +1,35 @@
+<div class="row">
+    <img src="/assets/images/profile.png"/>
+    <div class="col-12 banner">
+        <h3>Ville Kuhlman</h3>
+    </div>
+    <h4>Trusted<br>Software Architect</h4>
+</div>
+<div class="container-fluid">
+    <div class="line"></div>
+    <div class="row" [ngClass]="{toggleactive: toggledRowId===1, toggleinactive: toggledRowId!==1 }" (click)="toggleRow.emit(1)">
+        <div class="col-5 content">
+        <h5>Skills</h5>
+        <ng-container *ngFor="let skill of skills; index as i;">{{skill.title}} {{skill.subskills}}<br></ng-container>
+        </div>
+        <div class="col-7 content">
+        <h5>Summary</h5>Trusted Software Architect and Lead Developer with over 6 years of experience. Seeking to implement functional and high-quality solutions through proven development and design skills. Recognized for top level proficiency and work results.
+        </div>
+    </div>
+    <div class="row" [ngClass]="{toggleactive: toggledRowId===2, toggleinactive: toggledRowId!==2 }" (click)="toggleRow.emit(2)">
+        <div class="col-5 content">
+        <h5>Education</h5>School: Haaga-Helia University of Applied Sciences 08/2013 - 12/2016<br>Degree: Bachelor of IT<br>Main subject: Software development
+        </div>
+        <div class="col-7 content">
+        <h5>Experience</h5>Current employer: Lempinen & Partners Oy since 3/2015<br>Roles: Senior Associate 3/2018 - Present, Associate 3/2015 - 3/2018<br>Description: Architectural design, implementation and support of features built on ServiceNow
+        </div>
+    </div>
+    <div class="row" [ngClass]="{toggleactive: toggledRowId===3, toggleinactive: toggledRowId!==3 }" (click)="toggleRow.emit(3)">
+        <div class="col-5 content">
+        <h5>Languages</h5>Finnish: Native<br>English: Excellent
+        </div>
+        <div class="col-7 content">
+        <h5>Certifications</h5>ServiceNow Certified Implementation Specialist Cloud Management 9/2019<br>ServiceNow Certified Implementation Specialist IT Service Management 10/2018<br>ITIL Foundation 08/2015
+        </div>
+    </div>
+</div>

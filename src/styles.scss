@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body{
+    overscroll-behavior-y: contain;
+    height:100%;
+    background-color: rgba(0, 123, 255, 0.015);
+}
+
+

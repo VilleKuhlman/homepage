@@ -1,0 +1,69 @@
+:host{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    animation: spinner;
+    animation-duration: 6.6s;
+    animation-delay: 0.2s;
+    animation-timing-function: linear;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+    
+.letters{
+    color: #288cfb;
+    font-size: 12px;
+    margin-top: -25.5vh;
+    height: 25.5vh;
+    opacity:0;
+    font-family: Wind;
+    animation-name: letters; 
+    animation-duration: 6.6s;
+    animation-delay: 0.2s;
+    transition-timing-function:linear;
+    position: fixed;
+    transform-origin: bottom center;
+}
+
+@keyframes spinner {
+    0% {    
+        transform:scale(1.2) rotateZ(0deg);
+    }
+    5% {   
+        transform:scale(1.17) rotateZ(0deg);
+    }
+    15% {   
+        transform:scale(1) rotateZ(25deg);
+    }
+    53% {   
+        transform:scale(1) rotateZ(72deg);
+    }
+    58% {
+        transform:scale(1.3) rotateZ(80deg);
+    }
+ }
+
+@keyframes letters {
+    0% {
+        opacity:0.1;      
+    }
+    5% { 
+        opacity:0.2;
+    }
+    15% {   
+        opacity:0.6;
+    }
+    53% {   
+        opacity:0.6;
+    }
+    58%{
+        opacity: 0;
+    }
+    100% {
+        opacity:0; 
+    }
+}
