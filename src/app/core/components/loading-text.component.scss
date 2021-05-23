@@ -22,7 +22,7 @@ h1 {
   animation-timing-function: linear;
   opacity:0;
   font-family: Anurati;
-  font-size: 1em;
+  font-size: 1.5vh;
   font-weight: normal;
   text-transform: uppercase;
   color: black;
@@ -35,3 +35,22 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@media screen and (max-height: 900px) {
+  h1 {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  h1 {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-height: 560px) {
+  h1 {
+    font-size: 15px;
+  }
+}
+

@@ -57,7 +57,7 @@ span{
 
 div span{
     @-moz-document url-prefix() {
-        line-height:6;
+        line-height:6 !important;
     }
 }
 

@@ -29,6 +29,14 @@
     transform-origin: bottom center;
 }
 
+  @media screen and (max-height: 560px) {
+    .letters {
+        margin-top: -180px;
+        height: 180px;
+    }
+  }
+
+
 @keyframes spinner {
     0% {    
         transform:scale(1.2) rotateZ(0deg);

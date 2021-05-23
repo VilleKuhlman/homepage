@@ -7,7 +7,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
   <div class="col-12 banner">
-    <h4>Personal projects</h4>
+    <h3>Personal projects</h3>
   </div>
   <div class="timeline">
   <div class="container left">
