@@ -38,7 +38,6 @@ export class ContactEffects {
       ofType(ContactActions.enter),
       switchMap(() =>
         this.ContactService.getQuestions().pipe(
-          delay(0),
           map((questions: {[id: number] : {id:number, sentence:string, choices?:number[], child?:number, type?:string, placeholder?:string}}) =>
           ContactActions.getQuestionsSuccess({ questions })
           ),

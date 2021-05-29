@@ -28,8 +28,6 @@ export class RouteExistsGuard implements CanActivate {
     return this.store.pipe(
       select(fromRoot.selectPaths),
       map(paths => {
-       // const fl = paths.filter(path => path.name === name && path.token == token);
-        //eturn (fl.length > 0) ? true : false;
         return true;
       }),
       take(1)
@@ -42,7 +40,7 @@ export class RouteExistsGuard implements CanActivate {
         if (!inStore) 
             this.router.navigate([name+"/cv"]);
    
-          return of(inStore);  
+          return of(inStore);
       })
     );
   }
