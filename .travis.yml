@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - "14.17"
 
+before_install:
+  - npm i -g npm@version-number
+
 addons:
   chrome: stable
 
