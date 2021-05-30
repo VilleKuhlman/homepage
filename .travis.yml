@@ -12,7 +12,7 @@ cache:
   npm: false
 
 install:
-  - npm install
+  - npm install --loglevel=error
 
 script:
   - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
