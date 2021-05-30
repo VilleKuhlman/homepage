@@ -15,15 +15,15 @@ export class NavigationComponent {
   @Output() toggleMenu = new EventEmitter();
 
   get showMenu() {
-    return this.navigation.showMenu;
+    return this.navigation?.showMenu;
   }
 
   get showPrevNav() {
-    return this.navigation.prev != null;
+    return this.navigation?.prev != null;
   }
 
   get showNextNav() {
-    return !!this.navigation.next;
+    return !!this.navigation?.next;
   }
 
   @HostBinding('class.navigationIsActive') get c1 () { return this.showMenu; }

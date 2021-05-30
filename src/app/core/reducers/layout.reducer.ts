@@ -66,11 +66,10 @@ export const reducer = createReducer(
 
 );
 
-
-export const selectShowMenu = (state: State) => state.showMenu;
 export const selectPaths = (state: State) => state.paths;
 export const selectLoaded = (state: State) => state.loaded;
 export const selectShowLoadingScreen = (state: State) => state.showLoadingScreen;
+export const selectShowMenu = (state: State) => state.showMenu;
 
 export const selectSelectedPathId = (state: State) => state.currentPathId;
 
