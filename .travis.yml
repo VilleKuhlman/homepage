@@ -28,11 +28,11 @@ stages:
   - test
   - deploy
 
-  jobs:
-    include:
-      - stage: test               
-        name: "Unit Tests"            
-        script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      - stage: deploy
-        name: "Deploy to Firebase"
-        script: npm run build
+jobs:
+  include:
+    - stage: test               
+      name: "Unit Tests"            
+      script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+    - stage: deploy
+      name: "Deploy to Firebase"
+      script: npm run build
