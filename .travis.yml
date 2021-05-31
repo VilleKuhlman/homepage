@@ -24,6 +24,9 @@ deploy:
     branch: main
   skip_cleanup: true
 
+stages:
+  - test
+  - deploy
 
   jobs:
     include:
