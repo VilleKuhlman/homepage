@@ -24,3 +24,4 @@ deploy:
   message: "App 0.87"
   on:
     branch: main
+  skip_cleanup: true
