@@ -14,9 +14,6 @@ cache:
 install:
   - npm install --loglevel=error
 
-script:
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-
 deploy:
   provider: firebase
   token:
@@ -26,3 +23,13 @@ deploy:
   on:
     branch: main
   skip_cleanup: true
+
+
+  jobs:
+    include:
+      - stage: test               
+        name: "Unit Tests"            
+        script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - stage: deploy
+        name: "Deploy to Firebase"
+        script: npm run build
