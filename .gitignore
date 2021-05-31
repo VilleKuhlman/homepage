@@ -44,5 +44,3 @@ Thumbs.db
 
 #firebase
 /functions
-/.firebase
-.firebaserc
