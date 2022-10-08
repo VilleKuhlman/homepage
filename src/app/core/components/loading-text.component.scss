@@ -4,6 +4,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
+  white-space:nowrap
 }
   
 @keyframes shining {
@@ -38,13 +39,13 @@ h1 {
 
 @media screen and (max-height: 900px) {
   h1 {
-    font-size: 2vh;
+    font-size: 1.9vh;
   }
 }
 
 @media screen and (max-height: 650px) {
   h1 {
-    font-size: 2vh;
+    font-size: 1.9vh;
   }
 }
 
