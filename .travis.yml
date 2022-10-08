@@ -1,36 +1,32 @@
 language: node_js
 node_js:
-  - "14.17.0"
-
+- 14.17.0
 before_install:
-  - npm i -g npm@latest
-
+- npm i -g npm@latest
 addons:
   chrome: stable
-
 cache:
   npm: false
-
 install:
-  - npm install --loglevel=error --legacy-peer-deps
+- npm install --loglevel=error --legacy-peer-deps
 stages:
-  - test
-  - deploy
-
+- test
+- deploy
 jobs:
   include:
-    - stage: test               
-      name: "Unit Tests"            
-      script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-    - stage: deploy
-      name: "Deploy to Firebase"
-      script: npm run build
-      deploy:
-        provider: firebase
-        token:
-          secure: "1//0cFD0EY7XnV0RCgYIARAAGAwSNwF-L9IrRfoApyMoUwz2oaN7O9dRJH9iaQozQ8D1FH8MR4OFmEpnhYVmHp52BvGMqU84Op8Dcfw"
-        project: "vk-homepage-367f8"
-        message: "App 0.88"
-        on:
-          branch: main
-        skip_cleanup: true
+  - stage: test
+    name: Unit Tests
+    script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - stage: deploy
+    name: Deploy to Firebase
+    script: npm run build
+    deploy:
+      provider: firebase
+      project: vk-homepage-367f8
+      message: App 0.88
+      on:
+        branch: main
+      skip_cleanup: true
+env:
+  global:
+  - secure: PrhFaSL4WCinne2KsdAfozOIgIOTKrjccSwWFDrRhECLeSB5+bfCqx/1sYtzdt6KYZuwfVdkXChZRLfCMGVjxtbRYIzfZSy3avasSi633EgB2QxuXRWp0ZQqc5S31f+jofHIFypwCjz3XZv1BEAaAbFC43vFJ8VhXJrJyng8J1P53hCLNKtgKG1v2qxr78prYiVZKJzjcCWTHlbTS6JgSypQ/7GOswGjHNV01ifoQl6/p5/TEm9Zq1XiqbY/lmZyQyDmmnBmCPyW92cKL/VOq5HYe62TyBCw7Q1oGWMS2xrTHP4BGJMFJRcSRilPNnSiDYEFUJFvUxGj7GK4NZB7Dpia5Z2GfNo4Iu6dvCMI1q3H9nkl87npcPvQw3PHGQQLdJIlblBJ1UoEctnKEg+bDLkg391REHJWGl1p+Kirz1jXuZZZndCncEdfOVYcGzZ2RzlG3aJqYkh2NOzKZlM/kLLbexcle6PAKoQhC1plVdzgwcGaox+MYE8yksRUv7CMzNqHmEWwqZ/7WwJLEh83JGY2HHpgEOP5OhKQNbg03PSluutRhf5KgXHE2wNylBt6ixhPcEUGmzrE1dxuQb/qbODKMYVDI76pywoyTRszkaFqC/++qEmZnf7FeGTrrVJVazAcm6/CdlkJIlouh9Dj+69V66EtnvoHJAJAwcvNfNQ=
