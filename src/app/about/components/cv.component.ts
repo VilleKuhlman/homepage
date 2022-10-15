@@ -13,8 +13,8 @@ export class CVComponent implements OnInit {
   @Output() toggleRow = new EventEmitter();
   skills = [
     {title: "Role based:", subskills:["Development Leadership, Solution Design, Project Management"]},
-    {title: "Programming:", subskills:["JavaScript, NodeJS, Java, MySQL, Angular, NGRX"]},
-    {title: "Platforms:", subskills:["VMware, Hyper-V, Azure, AWS"]},
+    {title: "Programming:", subskills:["TypeScript, JavaScript, NodeJS, MySQL, PostgreSQL, React, Angular"]},
+    {title: "Platforms:", subskills:["AWS, VMware, Azure, ServiceNow"]},
     {title: "Methods:", subskills:["SAFe, Scrum, Agile, ITIL"]},
   ];
 
